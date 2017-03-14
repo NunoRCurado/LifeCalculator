@@ -12,6 +12,7 @@ import com.stacktips.view.CustomCalendarView;
 import com.stacktips.view.DayDecorator;
 import com.stacktips.view.DayView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -28,8 +29,18 @@ public class CalendarioDias extends Fragment {
     private String testedays;
     private Calendar currentCalendar;
     private int daysInMonth;
-    private int[] teste = {0,1,0,2,1};
+    private int[] teste = {0,-1,-1,
+            0,1,1,
+            1,1,-1,
+            0,1,1,
+            1,1,0,
+            1,-1,0,
+            1,-1,0,
+            -1,1,0,
+            -1,1,0,
+            1,-1,0,-1,0};
     private int mesInt = 0;
+
 
     @Nullable
     @Override
@@ -42,11 +53,7 @@ public class CalendarioDias extends Fragment {
         calendarView = (CustomCalendarView) v.findViewById(R.id.calendar_view);
 
         currentCalendar = inflateMesCerto(mesInt);
-
-
         daysInMonth = currentCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-
-
 
         //Show monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
@@ -62,8 +69,6 @@ public class CalendarioDias extends Fragment {
         calendarView.setDecorators(decorators);
         calendarView.refreshCalendar(currentCalendar);
 
-
-
         return v;
     }
 
@@ -71,12 +76,22 @@ public class CalendarioDias extends Fragment {
         @Override
         public void decorate(DayView dayView) {
 
+            final SimpleDateFormat df = new SimpleDateFormat("d");
+            String date = df.format(dayView.getDate());
+            int dia = Integer.parseInt(date);
 
-            int red = Color.parseColor("RED");
-            int yellow = Color.parseColor("YELLOW");
-            int green = Color.parseColor("GREEN");
-
-
+            if(teste[dia-1] == -1){
+                int color = Color.parseColor("RED");
+                dayView.setBackgroundColor(color);
+            }
+            else if(teste[dia-1] == 0){
+                int color = Color.parseColor("YELLOW");
+                dayView.setBackgroundColor(color);
+            }
+            else if(teste[dia-1] == 1){
+                int color = Color.parseColor("GREEN");
+                dayView.setBackgroundColor(color);
+            }
         }
     }
 

@@ -24,6 +24,8 @@ public class Registo extends Fragment {
     private EditText password;
     private EditText confirmaPassword;
     private User pessoa;
+    private String usernameLogin;
+    private String passwordLogin;
 
 
     @Nullable
@@ -59,8 +61,8 @@ public class Registo extends Fragment {
                     if(password.getText().toString() != confirmaPassword.getText().toString()){
                         Toast.makeText(mActivity, getString(R.string.check_password), Toast.LENGTH_SHORT).show();
                     }else{
-                        pessoa.setPassword(password.getText().toString());
-                        pessoa.setUsername(username.getText().toString());
+                       passwordLogin = (password.getText().toString());
+                       usernameLogin = (username.getText().toString());
 
                         Toast.makeText(mActivity, getString(R.string.registo_com_sucesso), Toast.LENGTH_SHORT).show();
                         mActivity.getFragmentManager().beginTransaction().remove(Registo.this).commit();

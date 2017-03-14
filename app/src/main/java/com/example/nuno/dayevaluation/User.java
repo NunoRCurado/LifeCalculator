@@ -1,5 +1,7 @@
 package com.example.nuno.dayevaluation;
 
+import java.util.ArrayList;
+
 /**
  * Created by Nuno on 10-Mar-17.
  */
@@ -7,25 +9,24 @@ package com.example.nuno.dayevaluation;
 public class User {
 
     private int id;
-    private String username;
-    private String password;
 
-    public String getUsername() {
-        return username;
+
+    ArrayList<Dias>Meses;
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public ArrayList<Dias> getMeses() {
+        return Meses;
     }
 
-    public String getPassword() {
-        return password;
+    public void setMeses(ArrayList<Dias> meses) {
+        Meses = meses;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 
 
 }

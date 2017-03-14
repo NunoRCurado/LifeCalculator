@@ -5,12 +5,6 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/teste"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <Button
         android:id="@+id/buttonData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,6 +51,7 @@
 
         <ImageView
             android:id="@+id/happyImageView"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,6 +59,7 @@
 
         <ImageView
             android:id="@+id/neutralImageView"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -71,6 +67,7 @@
 
         <ImageView
             android:id="@+id/sadImageView"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

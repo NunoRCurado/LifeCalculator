@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created by Nuno on 09-Mar-17.
@@ -22,6 +23,7 @@ public class FragmentoMenu extends Fragment {
     private ImageView sadImageView;
     private FragmentoMeses fragmentoMeses;
     private Auxiliar auxiliar;
+    private int avaliacao;
 
 
 
@@ -46,25 +48,23 @@ public class FragmentoMenu extends Fragment {
         alocarUI(v);
 
         fragmentoMeses = new FragmentoMeses();
+        final Activity mActivity = this.getActivity();
 
-     /*   teste.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                auxiliar.clickParaVerDias();
-            }
-        });*/
 
 
         happyImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                avaliacao = 1;
+                Toast.makeText(mActivity, getString(R.string.registo_com_sucesso), Toast.LENGTH_SHORT).show();
             }
         });
 
         neutralImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                avaliacao = 0;
+                Toast.makeText(mActivity, getString(R.string.registo_com_sucesso), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -73,6 +73,8 @@ public class FragmentoMenu extends Fragment {
         sadImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                avaliacao = -1;
+                Toast.makeText(mActivity, getString(R.string.registo_com_sucesso), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -90,7 +92,6 @@ public class FragmentoMenu extends Fragment {
     }
 
     private void alocarUI(View v){
-        teste = (Button)v.findViewById(R.id.teste);
         buttonData = (Button)v.findViewById(R.id.buttonData);
         happyImageView = (ImageView)v.findViewById(R.id.happyImageView);
         neutralImageView = (ImageView)v.findViewById(R.id.neutralImageView);

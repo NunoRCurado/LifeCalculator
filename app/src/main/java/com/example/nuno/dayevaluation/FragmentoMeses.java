@@ -21,8 +21,8 @@ public class FragmentoMeses extends Fragment {
     private Auxiliar auxiliar;
 
 
-    private int[] mediaCores = new int[]{0, 1, 2, 2, 2, 1, 0, 0, 2, 1, 2, 0};
-    private String[] listMeses = {"JAN", "FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"};
+    private int[] mediaCores = new int[]{0, 1, 1, 1, -1, 1, 0, 0, 1, 1, -1, 0};
+    private String[] listMeses = {"JAN", "FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};
 
     private GridView gridView;
     private TextView totalBom;
@@ -85,7 +85,7 @@ public class FragmentoMeses extends Fragment {
     private int contaDiasMaus(int dn, int[] medias) {
 
         for(int i = 0; i<medias.length;i++){
-            if(medias[i] ==0){
+            if(medias[i] ==-1){
                 dn++;
             }
         }
@@ -96,7 +96,7 @@ public class FragmentoMeses extends Fragment {
     private int contaDiasNormais(int dn, int[] medias) {
 
         for(int i = 0; i<medias.length;i++){
-            if(medias[i] == 1){
+            if(medias[i] == 0){
                 db++;
             }
         }
@@ -107,7 +107,7 @@ public class FragmentoMeses extends Fragment {
     private int contaDiasBons(int db,int[] medias){
 
         for(int i = 0; i<medias.length;i++){
-            if(medias[i] == 2){
+            if(medias[i] == 1){
                 db++;
             }
         }

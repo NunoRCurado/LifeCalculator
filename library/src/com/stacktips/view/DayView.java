@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.TextView;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +28,7 @@ import java.util.List;
 public class DayView extends TextView {
     private Date date;
     private List<DayDecorator> decorators;
+
 
     public DayView(Context context) {
         this(context, null, 0);
@@ -48,7 +50,10 @@ public class DayView extends TextView {
         this.date = date;
         this.decorators = decorators;
 
+
         final SimpleDateFormat df = new SimpleDateFormat("d");
+
+
         int day = Integer.parseInt(df.format(date));
         setText(String.valueOf(day));
     }

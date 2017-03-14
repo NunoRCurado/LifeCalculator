@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">DayEvaluation</string>
+    <string name="avalia_dia">Como correu o dia?</string>
+    <string name="dia_bom">Correu Bem</string>
+    <string name="dia_mau">Correu Mal</string>
+    <string name="dia_normal">Foi Normal</string>
+    <string name="insere_o_teu_nome">Insere o teu nome</string>
+
+
+    <string name="login">Login</string>
+    <string name="registo">Registo</string>
+    <string name="login_main_activity">Login</string>
+    <string name="username_login">Username</string>
+    <string name="username_pass">Password</string>
+    <string name="login_button">Login</string>
+    <string name="login_com_sucesso">Login com Sucesso</string>
+    <string name="campos_incompletos">Preenche todos os campos</string>
+    <string name="confirmar_registo">Ok</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="reset_button">Reset</string>
+    <string name="confirma_pass_registo">Confirma Pass</string>
+    <string name="Nome">registo_nome</string>
+    <string name="registo_nome">Nome</string>
+    <string name="registo_com_sucesso">Registo com sucesso</string>
+    <string name="fazer_logout">Logout</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="check_password">Passwords não são iguais</string>
+
+
+</resources>
